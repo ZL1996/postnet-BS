@@ -1,12 +1,53 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-<title>Sample</title>
+
+<head lang="en">
+    <!-- 引入 Bootstrap -->
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="./scripts/jquery.min.js"></script>
+    <script src = "./core/barcodeToCode.js"></script>
+    <script src = "./core/codeToBarcode.js"></script>
+    <script src = './scripts/my-script.js'></script>
+
 </head>
 <body>
-<h1 id="title"></h1>
+<div class = "container text-center" >
+    <h1 class="text-center">POST-NET</h1>
+    <form>
+        <div>
+            Input code:<input id = "input_code" type = "text" placeholder= "Please input code here"> <br><br>
+            <p id = "err_msg" hidden = "hidden">wrong input,please check</p>    <br> <br>
+        </div>
 
-<script src="scripts/jquery.min.js"></script>
-<script src="scripts/my-script.js"></script>
+        Result:<p id= "result" hidden = "hidden">
+
+    </p> <br> <br>
+
+        <input id = "barToCode" type = "radio" name = "kind" > Barcode To Code
+        &nbsp&nbsp<input  id = "codeToBarcode" type = "radio" name = "kind" >  Code To Barcode <br> <br>
+
+        <!--<button id="ok" class = "btn btn-primary">OK</button>-->
+        <input type="button" value="ok" id="ok" class = "btn btn-primary"/>
+    </form>
+</div>
+<br>
+<br>
+
+<div class = "container">
+
+    <table class = "table table-hover"  id = "history">
+        <caption class = "text-center table table-condensed">Histroy</caption>
+        <thead>
+        <tr>
+            <th>Code</th>
+            <th>Result</th>
+        </tr>
+        </thead>
+
+    </table>
+</div>
+
+
 </body>
 </html>
